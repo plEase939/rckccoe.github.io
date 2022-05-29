@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <title>Registration form</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.3/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i">
+    <link rel="stylesheet" href="/assets/css/styles.min.css?h=014283520add6b4a79b455e3a9b3b331">
+    <link href="css/style.css" rel="stylesheet">
+    <script src="https://js.stripe.com/v3"></script>
+</head>
+
+<body>
+    <!-- Start: PHP-Contact Form #dark -->
+    <div id="contact">
+        <!-- Start: PHP-Contact -->
+        <div class="container">
+            <!-- Start: intro -->
+            <div class="intro">
+                <h2>REGISTRATION FORM</h2>
+                <p>NEXT THINK TANK - USER DETAILS</p>
+            </div><!-- End: intro -->
+            <form id="contact-form" action="exec.php" method="post">
+                <div class="messages"></div>
+                <div class="controls">
+                    <div class="form-row">
+                        <div class="col-md-6">
+                            <div class="form-group"><label for="form_name">First Name* </label><input class="form-control" name="fn" type="text" id="form_name" data-error="Cannot be left blank" name="name" required="" placeholder="Enter your firstname">
+                                <div class="help-block with-errors"></div>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group"><label for="form_lastname">Last Name*</label><input class="form-control" name="ln" type="text" id="form_lastname" data-error="Cannot be left blank" name="lastname" required="" placeholder="Enter your lastname">
+                                <div class="help-block with-errors"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="col-md-6">
+                        <div class="form-group"><label for="form_email">E-Mail* </label><input class="form-control" name="email" type="email" id="form_email" data-error="Cannot be left blank" name="email" required="" placeholder="Enter your email id">
+                            <div class="help-block with-errors"></div>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-group"><label for="form_phone">Phone number</label><input class="form-control" name="no" type="number" id="form_phone" data-error="Cannot be left blank" name="phone" required="" placeholder="Enter your phone number">
+                            <div class="help-block with-errors"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="col-md-12">
+                        <div class="form-group"><label for="form_message">Club Name</label><input class="form-control" name="al" type="text" id="form_message" data-error="Cannot be left blank" rows="4" name="message" required="" placeholder="Type Guest if you do not belong to any club">
+                            <div class="help-block with-errors"></div>
+                        </div>
+                    </div>
+                    <div class="col-md-12"><button class="btn btn-success btn-send" name="s1" value="Submit" type="submit">Submit</button></div>
+                </div>
+                <div class="form-row">
+                    <div class="col-md-12">
+                        <p class="text-muted"><strong>*</strong> NEXT THINK TANK - RCKCCOE</p>
+                    </div>
+                </div>
+            </form>
+        </div><!-- End: PHP-Contact -->
+    </div><!-- End: PHP-Contact Form #dark -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.3/js/bootstrap.bundle.min.js"></script>
+    <script src="/assets/js/script.min.js?h=cfbdd6855841bb85199fb08a4eb9156c"></script>
+</body>
+
+</html>

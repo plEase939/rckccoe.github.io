@@ -1,0 +1,33 @@
+<IfModule mod_rewrite.c>
+Options +FollowSymLinks -MultiViews
+
+
+RewriteEngine On
+RewriteBase /
+
+#removing trailing slash
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^(.*)/$ $1 [R=301,L]
+
+#www to non
+RewriteCond %{HTTP_HOST} ^www\.(([a-z0-9_]+\.)?domain\.com)$ [NC]
+RewriteRule .? http://%1%{REQUEST_URI} [R=301,L]
+
+#html
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^([^\.]+)$ $1.html [NC,L]
+
+#index redirect
+RewriteCond %{THE_REQUEST} ^[A-Z]{3,9}\ /index\.html\ HTTP/
+RewriteRule ^index\.html$ http://domain.com/ [R=301,L]
+RewriteRule ^index\.php$ http://domain.com/ [R=301,L]
+RewriteCond %{THE_REQUEST} \.html
+RewriteCond %{THE_REQUEST} \.php
+RewriteRule ^(.*)\.html$ /$1 [R=301,L]
+
+php_value upload_max_filesize 64M
+php_value post_max_size 64M
+php_value max_execution_time 300
+php_value max_input_time 300
+</IfModule>

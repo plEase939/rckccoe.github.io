@@ -1,0 +1,705 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<title>Next Think Tank - RCKCCOE</title>
+
+	
+	<link
+		rel="shortcut icon"
+		href="src/img/rotary.png"
+		type="image/x-icon"
+	>
+	
+
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+	
+</head>
+<body>
+
+		
+<html lang="en">
+
+
+<style>
+	@import url('https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800');
+	@import url('https://fonts.googleapis.com/css?family=Raleway:300,900,100,600,400,500,800');
+
+	html {
+		height: 100vh;
+		overflow: none;
+	}
+
+	.copy-right-area,
+	.web-footer,
+	.navbar {
+		display: none;
+	}
+
+	.parentbody {
+		width: 100vw;
+		height: 100vh;
+		background: transparent;
+		background-size: cover;
+		background-position: 50% 20%;
+		background-repeat: no-repeat;
+		box-sizing: border-box;
+		margin: 0;
+		position: fixed;
+		top: 0;
+		left: 0;
+		z-index: 9999;
+	}
+
+	#myVideo {
+		position: fixed;
+		right: 0;
+		bottom: 0;
+		min-width: 100%;
+		min-height: 100%;
+	}
+
+	.video--event-bg {
+		position: fixed;
+		right: 0;
+		bottom: 0;
+		min-width: 100%;
+		min-height: 100%;
+		background-image: url(src/);
+		background-repeat: no-repeat;
+		background-size: cover;
+		background-position: 50% 50%;
+
+	}
+
+
+	.district-logo {
+		position: absolute;
+		top: 50px;
+		left: 50%;
+		transform: translate(-50%, -50%);
+	}
+
+	.rc-container {
+		position: absolute;
+		bottom: 0px;
+		top: 80%;
+		left: 50%;
+		transform: translate(-50%, -50%)
+
+	}
+
+	.district-logo img {
+		width: 350px;
+	}
+
+	.flip-clock {
+		display: none !important;
+	}
+
+	div {
+		display: inline-block;
+		line-height: 1;
+		text-align: center;
+	}
+
+	.mainScreen {
+		position: absolute;
+		left: calc(50vw - 350px);
+		top: calc(50vh - 210px);
+		width: 700px;
+		height: 400px;
+		border-radius: 5px;
+	}
+
+	/* define the animation */
+	@-webkit-keyframes marquee {
+		0% {
+			-webkit-transform: translate(0, 0);
+		}
+
+		100% {
+			-webkit-transform: translate(0%, -100%);
+		}
+	}
+
+	@-moz-keyframes marquee {
+		0% {
+			transform: translate(0, 0);
+		}
+
+		100% {
+			transform: translate(0, -100%);
+		}
+	}
+
+	/* define your limiting container */
+	.marquee {
+		border: solid 2px;
+		overflow: hidden;
+		box-sizing: border-box;
+		width: 220px;
+		position: absolute;
+		height: 400px;
+		border: transparent;
+		top: calc(50vh - 210px);
+		opacity: 0;
+		transition: 0.4s all;
+		background: rgba(0, 0, 0, 0.6);
+	}
+
+	
+
+	/* this is the tray moving around your container */
+	.marquee .marquee-scroll {
+		display: inline-block;
+		padding: 400px 0 0;
+		text-indent: 0;
+		animation: marquee 20s linear infinite;
+		/* here you select the animation */
+		-webkit-animation: marquee 30s linear infinite;
+		/* here you select the animation */
+	}
+
+	.marquee .marquee-scroll h2 {
+		color: #fff;
+		text-transform: capitalize;
+		font-size: 18px;
+	}
+
+	.marquee .marquee-scroll p {
+		color: #fff;
+		text-transform: capitalize;
+		font-size: 14px;
+	}
+
+	/* pause the animation on mouse over
+	.marquee .marquee-scroll:hover {
+		animation-play-state: paused;
+		-webkit-animation-play-state: paused;
+	} */
+	.sponsor-container {
+		position: fixed;
+		right: 50%;
+		bottom: 60px;
+		cursor: pointer;
+	}
+
+	.sponsor-container.show-them {
+		display: none;
+	}
+
+	.chevron {
+		position: absolute;
+		width: 28px;
+		height: 8px;
+		opacity: 0;
+		transform: scale3d(0.5, 0.5, 0.5);
+		animation: move 3s ease-out infinite;
+	}
+
+	.chevron:first-child {
+		animation: move 3s ease-out 1s infinite;
+	}
+
+	.chevron:nth-child(2) {
+		animation: move 3s ease-out 2s infinite;
+	}
+
+	.chevron:before,
+	.chevron:after {
+		content: ' ';
+		position: absolute;
+		top: 0;
+		height: 100%;
+		width: 51%;
+		background: #fff;
+	}
+
+	.chevron:before {
+		left: 0;
+		transform: skew(0deg, 30deg);
+	}
+
+	.chevron:after {
+		right: 0;
+		width: 50%;
+		transform: skew(0deg, -30deg);
+	}
+
+	@keyframes move {
+		25% {
+			opacity: 1;
+
+		}
+
+		33% {
+			opacity: 1;
+			transform: translateY(30px);
+		}
+
+		67% {
+			opacity: 1;
+			transform: translateY(40px);
+		}
+
+		100% {
+			opacity: 0;
+			transform: translateY(55px) scale3d(0.5, 0.5, 0.5);
+		}
+	}
+
+	.text {
+		display: block;
+		margin-left: 20px;
+		font-family: "Helvetica Neue", "Helvetica", Arial, sans-serif;
+		font-size: 12px;
+		color: #fff;
+		text-transform: uppercase;
+		white-space: nowrap;
+		opacity: .25;
+		animation: pulse 2s linear alternate infinite;
+	}
+
+	@keyframes pulse {
+		to {
+			opacity: 1;
+		}
+	}
+
+	.sponsors-main-body {
+		position: fixed;
+		width: 100vw;
+		height: 100vh;
+		background-color: #fff;
+		left: 0;
+		top: 100%;
+		transition: 0.8s all;
+		padding: 20px;
+		overflow: auto;
+		z-index: 99999;
+	}
+
+	.sponsor-block:hover {
+
+		transform: scale(1.1);
+	}
+
+	.sponsors-main-body.show-them {
+		top: 0;
+	}
+
+	.sponsor-heading {
+		margin: 20px 0 0px;
+		font-size: 32px;
+		font-weight: 900;
+		font-family: "Helvetica Neue", "Helvetica", Arial, sans-serif;
+	}
+
+	.sponsor-subheading {
+		width: 1000px;
+		margin: 30px auto 10px;
+		font-size: 18px;
+		font-weight: 600;
+		font-family: "Helvetica Neue", "Helvetica", Arial, sans-serif;
+	}
+
+	.outer {
+		position: absolute;
+		margin: auto;
+		width: 70px;
+		cursor: pointer;
+		top: 20px;
+		right: 20px;
+	}
+
+	.inner {
+		width: inherit;
+		text-align: center;
+	}
+
+	.inner label {
+		font-size: .8em;
+		line-height: 4em;
+		text-transform: uppercase;
+		color: #000;
+		transition: all .3s ease-in;
+		opacity: 0;
+		cursor: pointer;
+		width: 100%;
+		margin: 0;
+	}
+
+	.inner:before,
+	.inner:after {
+		position: absolute;
+		content: '';
+		height: 1px;
+		width: inherit;
+		background: #000;
+		left: 0;
+		transition: all .3s ease-in;
+	}
+
+	.inner:before {
+		top: 50%;
+		transform: rotate(45deg);
+	}
+
+	.inner:after {
+		bottom: 50%;
+		transform: rotate(-45deg);
+	}
+
+	.outer:hover label {
+		opacity: 1;
+	}
+
+	.outer:hover .inner:before,
+	.outer:hover .inner:after {
+		transform: rotate(0);
+	}
+
+	.outer:hover .inner:before {
+		top: 0;
+	}
+
+	.outer:hover .inner:after {
+		bottom: 0;
+	}
+
+	.fa-times.close {
+		position: absolute;
+		font-size: 21px;
+		right: -9px;
+		top: -12px;
+		background: rgba(255, 255, 255, 0.8);
+		padding: 2px 5px;
+		border-radius: 50%;
+		cursor: pointer;
+		transition: 0.3s all;
+	}
+
+	.fa-times.close:hover {
+		background: rgba(255, 255, 255, 1);
+	}
+
+	.button-4 {
+		width: 140px;
+		height: 50px;
+		border: 2px solid #fff;
+		background-color: #fff;
+		float: left;
+		text-align: center;
+		cursor: pointer;
+		position: relative;
+		box-sizing: border-box;
+		overflow: hidden;
+		margin: 0 0 40px 50px;
+		position: absolute;
+		right: 30px;
+		top: 30px;
+	}
+
+	.button-4 a {
+		font-family: arial;
+		font-size: 16px;
+		color: #34495e;
+		text-decoration: none;
+		line-height: 50px;
+		transition: all .5s ease;
+		z-index: 2;
+		position: relative;
+	}
+
+	.eff-4 {
+		width: 140px;
+		height: 50px;
+		left: -140px;
+		background: #34495e;
+		position: absolute;
+		transition: all .5s ease;
+		z-index: 1;
+	}
+
+	.button-4:hover .eff-4 {
+		left: 0;
+	}
+
+	.button-4:hover a {
+		color: #fff;
+	}
+
+	.button-4 a:hover {
+		color: #fff !important;
+	}
+
+	
+
+	.mob-message {
+		position: fixed;
+		top: 0;
+		width: 100%;
+		text-align: center;
+		left: 0;
+		background: #fff;
+		z-index: 99999999;
+		display: none;
+	}
+
+	.chatBox {
+		position: fixed;
+		right: 30px;
+		z-index: 999;
+		width: 400px;
+		height: 400px;
+		top: -400px;
+		border-radius: 3px;
+		border: 2px solid #fff;
+		transition: 0.3s all;
+	}
+
+	.chatBox.active-class {
+		top: 90px;
+	}
+
+	.chatBoxFrame {
+		width: 100%;
+		height: 100%;
+	}
+
+	@media screen and (max-width: 960px) {
+
+		.login--yes,
+		.login--no {
+			font-size: 14px;
+			margin: 0 5px;
+			height: 36px;
+		}
+
+		.login--modal {
+
+			width: 300px;
+			top: 35%;
+			padding: 20px 15px;
+		}
+
+		.login--modal-text {
+			font-size: 18px;
+		}
+
+	}
+
+	@media screen and (max-width: 900px) {
+		.button-4 {
+			right: 50%;
+			top: 555px;
+			transform: translate(50%);
+		}
+
+		.chatBox {
+			width: 95%;
+			height: 300px;
+			transform: translate(50%);
+			right: 50%;
+		}
+
+		.marquee .marquee-scroll {
+			padding: 150px 0 0;
+		}
+
+		.mob-message {
+			display: block;
+		}
+
+		.mainScreen {
+			width: 95%;
+			height: 300px;
+			top: 250px;
+			left: 50%;
+			transform: translate(-50%);
+		}
+
+		.wingImage-left {
+			top: 100px;
+			left: 0;
+			height: 130px;
+			transform: none;
+			width: 150px;
+		}
+
+		.wingImage-right {
+			top: 100px;
+			right: 0;
+			height: 130px;
+			transform: none;
+			width: 150px;
+			left: auto;
+		}
+
+		.marquee-right {
+			display: none;
+		}
+
+		.marquee-left {
+			top: 100px;
+			left: 50%;
+			height: 130px;
+			width: 300px;
+			transform: translate(-50%);
+			border-radius: 5px;
+		}
+
+		.sponsor-container {
+			position: absolute;
+			right: calc(50% + 20px);
+			bottom: auto;
+			top: 720px;
+			cursor: pointer;
+			transform: translate(50%);
+		}
+
+		.parentbody {
+			overflow: auto;
+		}
+
+		.rotaract--quarter-main {
+			top: 20%;
+		}
+
+		.rotaract--carousel {
+			top: 45%;
+		}
+
+		.sponsor-subheading,
+		.sponsor-body {
+			width: 100%;
+			margin: 0 auto;
+			display: block;
+		}
+
+		.sponsor-block {
+			width: 150px;
+			margin: 0px 10px 40px;
+			position: relative;
+		}
+
+		.sponsor-block:hover {
+			transform: none;
+		}
+
+		.sponsor-heading {
+			font-size: 30px;
+			margin: 80px 0 20px;
+		}
+
+		.sponsors-main-body {
+			padding: 0 10px;
+		}
+
+		.holder {
+  width: 400px;
+  height: 300px;
+  position: relative
+}
+
+.frame {
+  width: 100%;
+  height: 100%;
+  background-color: blue;
+}
+
+.bar {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 40px;
+  background-color: red;
+}
+
+.class {
+	width: 100%;
+	height: 100%;
+}
+
+	
+	}
+</style>
+<script src="../code.jquery.com/jquery-1.10.2.js"></script>
+<div class="mob-message">For best user experience view this link on a desktop/laptop</div>
+<div class="parentbody">
+	<div class="district-logo"><img src="nttlive/src/img/rckccoe white.png"></div>
+	
+	<div style="position:fixed;top:0;left:0;width:40vw;height:100vh;z-index:999999"></div>
+    <div style="position:fixed;top:0;right:0;width:40vw;height:100vh;z-index:999999"></div>
+    <div style="position:fixed;top:0vh;left:0;width:100vw;height:40vh;z-index:999999"></div>
+    <div style="position:fixed;bottom:00vh;left:0;width:100vw;height:40vh;z-index:999999"></div>
+    <div id="cover_me" style="position:fixed;top:0;left:0;width:0%;height:0%;z-index:999999"></div>
+    <div id="player"></div>
+	<iframe id="frame" class="mainScreen" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+		allowfullscreen="" src="https://www.youtube.com/embed/tDK3-5k4i50?autoplay=1&amp;loop=1&amp;rel=0&amp;controls=0&amp;showninfo=0"
+		frameborder="0"></iframe>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js">
+	$('.ytp-large-play-button ytp-button').click(function() {
+    $('#cover_me').css({
+        'width': '100%',
+        'height': '100%',
+        
+    });
+});
+</script>
+		
+	<div class="chatBox"><i class="fa fa-times close" aria-hidden="true"></i><iframe class="chatBoxFrame"
+			allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""
+			data-src="https://www.youtube.com/embed/XfJWUDYAyks?autoplay=1&loop=1&rel=0&showinfo=0"
+			frameborder="0"></iframe></div>
+		
+			
+	
+</div>
+<div class="video--event-bg"></div>
+<video autoplay muted loop id="myVideo">
+	<source src="nttlive/src/vid/black.mp4" type="video/mp4">
+</video>
+<!--<div class="rc-container">
+	<img src="src/img/sponsors/sponsors.png">
+</div>-->	
+<script>
+	jQuery(document).ready(function ($) {
+		jQuery('.chat-live').on('click', function () {
+			jQuery('.chatBox').addClass('active-class');
+		});
+		jQuery('.fa-times.close').on('click', function () {
+			jQuery('.chatBox').removeClass('active-class');
+		});
+		jQuery('.login--yes').on('click', function () {
+			jQuery('.login--overlay').fadeOut();
+		});
+		jQuery('.sponsor-container').on('click', function () {
+			jQuery('.sponsors-main-body').addClass('show-them');
+			jQuery('.sponsor-container').addClass('show-them');
+		});
+		jQuery('.outer').on('click', function () {
+			jQuery('.sponsors-main-body').removeClass('show-them');
+			jQuery('.sponsor-container').removeClass('show-them');
+		});
+		setInterval(changeWings, 60000);
+	});
+	function changeWings() {
+		jQuery('.marquee, .wingImage').toggleClass('active-class');
+	}
+</script>
+
+
+
+</html>
+
+
+
+</html>
